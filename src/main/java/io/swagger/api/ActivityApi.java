@@ -29,31 +29,31 @@ import java.util.Map;
 @Api(value = "activity", description = "the activity API")
 public interface ActivityApi {
 
-    @ApiOperation(value = "deletes an activity record", nickname = "activityDelete", notes = "", tags = {
-            "developers", })
-    @ApiResponses(value = { @ApiResponse(code = 200, message = "deleted activity successfully") })
-    @RequestMapping(value = "/activity", method = RequestMethod.DELETE)
-    ResponseEntity<Void> activityDelete(
-            @NotNull @ApiParam(value = "unique activity identifier", required = true) @Valid @RequestParam(value = "activityId", required = true) String activityId);
+	@ApiOperation(value = "deletes an activity record", nickname = "activityDelete", notes = "", tags = {
+			"developers", })
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "deleted activity successfully") })
+	@RequestMapping(value = "/activity", method = RequestMethod.DELETE)
+	ResponseEntity<Void> activityDelete(
+			@NotNull @ApiParam(value = "unique activity identifier", required = true) @Valid @RequestParam(value = "activityId", required = true) String activityId);
 
-    @ApiOperation(value = "gets details of a recorded activity", nickname = "activityGet", notes = "", response = ActivityBase.class, tags = {
-            "developers", })
-    @ApiResponses(value = { @ApiResponse(code = 200, message = "activity details", response = ActivityBase.class) })
-    @RequestMapping(value = "/activity", produces = { "application/json" }, method = RequestMethod.GET)
-    ResponseEntity<ActivityBase> activityGet(
-            @NotNull @ApiParam(value = "unique user identifier", required = true) @Valid @RequestParam(value = "userId", required = true) String userId,
-            @NotNull @ApiParam(value = "unique activity identifier", required = true) @Valid @RequestParam(value = "activityId", required = true) String activityId);
+	@ApiOperation(value = "gets details of a recorded activity", nickname = "activityGet", notes = "", response = ActivityBase.class, tags = {
+			"developers", })
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "activity details", response = ActivityBase.class) })
+	@RequestMapping(value = "/activity", produces = { "application/json" }, method = RequestMethod.GET)
+	ResponseEntity<ActivityBase> activityGet(
+			@NotNull @ApiParam(value = "unique user identifier", required = true) @Valid @RequestParam(value = "userId", required = true) String userId,
+			@NotNull @ApiParam(value = "unique activity identifier", required = true) @Valid @RequestParam(value = "activityId", required = true) String activityId);
 
-    @ApiOperation(value = "records a user activity", nickname = "activityPost", notes = "", tags = { "developers", })
-    @ApiResponses(value = { @ApiResponse(code = 200, message = "activity recorded successfully") })
-    @RequestMapping(value = "/activity", consumes = { "application/json" }, method = RequestMethod.POST)
-    ResponseEntity<Void> activityPost(
-            @ApiParam(value = "activity to record") @Valid @RequestBody ActivityBaseReqBody body);
+	@ApiOperation(value = "records a user activity", nickname = "activityPost", notes = "", tags = { "developers", })
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "activity recorded successfully") })
+	@RequestMapping(value = "/activity", consumes = { "application/json" }, method = RequestMethod.POST)
+	ResponseEntity<Void> activityPost(
+			@ApiParam(value = "activity to record") @Valid @RequestBody ActivityBaseReqBody body);
 
-    @ApiOperation(value = "updates an activity record", nickname = "activityPut", notes = "", tags = { "developers", })
-    @ApiResponses(value = { @ApiResponse(code = 200, message = "activity updated successfully") })
-    @RequestMapping(value = "/activity", consumes = { "application/json" }, method = RequestMethod.PUT)
-    ResponseEntity<Void> activityPut(
-            @ApiParam(value = "activity details to update") @Valid @RequestBody ActivityBaseReqBody body);
+	@ApiOperation(value = "updates an activity record", nickname = "activityPut", notes = "", tags = { "developers", })
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "activity updated successfully") })
+	@RequestMapping(value = "/activity", consumes = { "application/json" }, method = RequestMethod.PUT)
+	ResponseEntity<Void> activityPut(
+			@ApiParam(value = "activity details to update") @Valid @RequestBody ActivityBaseReqBody body);
 
 }

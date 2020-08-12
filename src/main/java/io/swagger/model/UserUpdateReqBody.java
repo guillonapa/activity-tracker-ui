@@ -15,92 +15,94 @@ import javax.validation.constraints.*;
  */
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2020-08-11T15:52:03.807Z[GMT]")
-public class UserUpdateReqBody extends UserBaseReqBody  {
-  @JsonProperty("oldPw")
-  private String oldPw = null;
+public class UserUpdateReqBody extends UserBaseReqBody {
+	@JsonProperty("oldPw")
+	private String oldPw = null;
 
-  @JsonProperty("newPw")
-  private String newPw = null;
+	@JsonProperty("newPw")
+	private String newPw = null;
 
-  public UserUpdateReqBody oldPw(String oldPw) {
-    this.oldPw = oldPw;
-    return this;
-  }
+	public UserUpdateReqBody oldPw(String oldPw) {
+		this.oldPw = oldPw;
+		return this;
+	}
 
-  /**
-   * Get oldPw
-   * @return oldPw
-  **/
-  @ApiModelProperty(required = true, value = "")
-      @NotNull
+	/**
+	 * Get oldPw
+	 * 
+	 * @return oldPw
+	 **/
+	@ApiModelProperty(required = true, value = "")
+	@NotNull
 
-  @Size(min=6,max=20)   public String getOldPw() {
-    return oldPw;
-  }
+	@Size(min = 6, max = 20)
+	public String getOldPw() {
+		return oldPw;
+	}
 
-  public void setOldPw(String oldPw) {
-    this.oldPw = oldPw;
-  }
+	public void setOldPw(String oldPw) {
+		this.oldPw = oldPw;
+	}
 
-  public UserUpdateReqBody newPw(String newPw) {
-    this.newPw = newPw;
-    return this;
-  }
+	public UserUpdateReqBody newPw(String newPw) {
+		this.newPw = newPw;
+		return this;
+	}
 
-  /**
-   * Get newPw
-   * @return newPw
-  **/
-  @ApiModelProperty(required = true, value = "")
-      @NotNull
+	/**
+	 * Get newPw
+	 * 
+	 * @return newPw
+	 **/
+	@ApiModelProperty(required = true, value = "")
+	@NotNull
 
-  @Size(min=6,max=20)   public String getNewPw() {
-    return newPw;
-  }
+	@Size(min = 6, max = 20)
+	public String getNewPw() {
+		return newPw;
+	}
 
-  public void setNewPw(String newPw) {
-    this.newPw = newPw;
-  }
+	public void setNewPw(String newPw) {
+		this.newPw = newPw;
+	}
 
+	@Override
+	public boolean equals(java.lang.Object o) {
+		if (this == o) {
+			return true;
+		}
+		if (o == null || getClass() != o.getClass()) {
+			return false;
+		}
+		UserUpdateReqBody userUpdateReqBody = (UserUpdateReqBody) o;
+		return Objects.equals(this.oldPw, userUpdateReqBody.oldPw)
+				&& Objects.equals(this.newPw, userUpdateReqBody.newPw) && super.equals(o);
+	}
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    UserUpdateReqBody userUpdateReqBody = (UserUpdateReqBody) o;
-    return Objects.equals(this.oldPw, userUpdateReqBody.oldPw) &&
-        Objects.equals(this.newPw, userUpdateReqBody.newPw) &&
-        super.equals(o);
-  }
+	@Override
+	public int hashCode() {
+		return Objects.hash(oldPw, newPw, super.hashCode());
+	}
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(oldPw, newPw, super.hashCode());
-  }
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("class UserUpdateReqBody {\n");
+		sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+		sb.append("    oldPw: ").append(toIndentedString(oldPw)).append("\n");
+		sb.append("    newPw: ").append(toIndentedString(newPw)).append("\n");
+		sb.append("}");
+		return sb.toString();
+	}
 
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class UserUpdateReqBody {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    oldPw: ").append(toIndentedString(oldPw)).append("\n");
-    sb.append("    newPw: ").append(toIndentedString(newPw)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+	/**
+	 * Convert the given object to string with each line indented by 4 spaces
+	 * (except the first line).
+	 */
+	private String toIndentedString(java.lang.Object o) {
+		if (o == null) {
+			return "null";
+		}
+		return o.toString().replace("\n", "\n    ");
+	}
 }

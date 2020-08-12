@@ -23,18 +23,17 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
+
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2020-08-11T15:52:03.807Z[GMT]")
 @Api(value = "analyze", description = "the analyze API")
 public interface AnalyzeApi {
 
-    @ApiOperation(value = "generates an activity analysis", nickname = "analyzePost", notes = "", tags={ "developers", })
-    @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "analysis generated successfully"),
-        @ApiResponse(code = 400, message = "invalid set of parameters") })
-    @RequestMapping(value = "/analyze",
-        consumes = { "application/json" },
-        method = RequestMethod.POST)
-    ResponseEntity<Void> analyzePost(@ApiParam(value = "parameters used for activity analysis"  )  @Valid @RequestBody AnalysisParameters body
-);
+	@ApiOperation(value = "generates an activity analysis", nickname = "analyzePost", notes = "", tags = {
+			"developers", })
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "analysis generated successfully"),
+			@ApiResponse(code = 400, message = "invalid set of parameters") })
+	@RequestMapping(value = "/analyze", consumes = { "application/json" }, method = RequestMethod.POST)
+	ResponseEntity<Void> analyzePost(
+			@ApiParam(value = "parameters used for activity analysis") @Valid @RequestBody AnalysisParameters body);
 
 }

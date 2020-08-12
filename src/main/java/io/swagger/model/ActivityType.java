@@ -14,91 +14,91 @@ import javax.validation.constraints.*;
  */
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2020-08-11T15:52:03.807Z[GMT]")
-public class ActivityType   {
-  @JsonProperty("name")
-  private String name = null;
+public class ActivityType {
+	@JsonProperty("name")
+	private String name = null;
 
-  @JsonProperty("timebased")
-  private Boolean timebased = null;
+	@JsonProperty("timebased")
+	private Boolean timebased = null;
 
-  public ActivityType name(String name) {
-    this.name = name;
-    return this;
-  }
+	public ActivityType name(String name) {
+		this.name = name;
+		return this;
+	}
 
-  /**
-   * Get name
-   * @return name
-  **/
-  @ApiModelProperty(example = "Running", required = true, value = "")
-      @NotNull
+	/**
+	 * Get name
+	 * 
+	 * @return name
+	 **/
+	@ApiModelProperty(example = "Running", required = true, value = "")
+	@NotNull
 
-    public String getName() {
-    return name;
-  }
+	public String getName() {
+		return name;
+	}
 
-  public void setName(String name) {
-    this.name = name;
-  }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-  public ActivityType timebased(Boolean timebased) {
-    this.timebased = timebased;
-    return this;
-  }
+	public ActivityType timebased(Boolean timebased) {
+		this.timebased = timebased;
+		return this;
+	}
 
-  /**
-   * Get timebased
-   * @return timebased
-  **/
-  @ApiModelProperty(example = "true", required = true, value = "")
-      @NotNull
+	/**
+	 * Get timebased
+	 * 
+	 * @return timebased
+	 **/
+	@ApiModelProperty(example = "true", required = true, value = "")
+	@NotNull
 
-    public Boolean isTimebased() {
-    return timebased;
-  }
+	public Boolean isTimebased() {
+		return timebased;
+	}
 
-  public void setTimebased(Boolean timebased) {
-    this.timebased = timebased;
-  }
+	public void setTimebased(Boolean timebased) {
+		this.timebased = timebased;
+	}
 
+	@Override
+	public boolean equals(java.lang.Object o) {
+		if (this == o) {
+			return true;
+		}
+		if (o == null || getClass() != o.getClass()) {
+			return false;
+		}
+		ActivityType activityType = (ActivityType) o;
+		return Objects.equals(this.name, activityType.name) && Objects.equals(this.timebased, activityType.timebased);
+	}
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    ActivityType activityType = (ActivityType) o;
-    return Objects.equals(this.name, activityType.name) &&
-        Objects.equals(this.timebased, activityType.timebased);
-  }
+	@Override
+	public int hashCode() {
+		return Objects.hash(name, timebased);
+	}
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(name, timebased);
-  }
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("class ActivityType {\n");
 
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ActivityType {\n");
-    
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    timebased: ").append(toIndentedString(timebased)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
+		sb.append("    name: ").append(toIndentedString(name)).append("\n");
+		sb.append("    timebased: ").append(toIndentedString(timebased)).append("\n");
+		sb.append("}");
+		return sb.toString();
+	}
 
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+	/**
+	 * Convert the given object to string with each line indented by 4 spaces
+	 * (except the first line).
+	 */
+	private String toIndentedString(java.lang.Object o) {
+		if (o == null) {
+			return "null";
+		}
+		return o.toString().replace("\n", "\n    ");
+	}
 }

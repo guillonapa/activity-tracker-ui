@@ -3,6 +3,8 @@ package io.swagger.api;
 import io.swagger.model.AnalysisParameters;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.*;
+import io.swagger.api.impl.AnalyzeApiControllerImpl;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -22,26 +24,27 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2020-08-11T15:52:03.807Z[GMT]")
 @Controller
 public class AnalyzeApiController implements AnalyzeApi {
 
-    private static final Logger log = LoggerFactory.getLogger(AnalyzeApiController.class);
+	private static final Logger log = LoggerFactory.getLogger(AnalyzeApiController.class);
 
-    private final ObjectMapper objectMapper;
+	private final ObjectMapper objectMapper;
 
-    private final HttpServletRequest request;
+	private final HttpServletRequest request;
 
-    @org.springframework.beans.factory.annotation.Autowired
-    public AnalyzeApiController(ObjectMapper objectMapper, HttpServletRequest request) {
-        this.objectMapper = objectMapper;
-        this.request = request;
-    }
+	@org.springframework.beans.factory.annotation.Autowired
+	public AnalyzeApiController(ObjectMapper objectMapper, HttpServletRequest request) {
+		this.objectMapper = objectMapper;
+		this.request = request;
+	}
 
-    public ResponseEntity<Void> analyzePost(@ApiParam(value = "parameters used for activity analysis"  )  @Valid @RequestBody AnalysisParameters body
-) {
-        String accept = request.getHeader("Accept");
-        return new ResponseEntity<Void>(HttpStatus.NOT_IMPLEMENTED);
-    }
+	public ResponseEntity<Void> analyzePost(
+			@ApiParam(value = "parameters used for activity analysis") @Valid @RequestBody AnalysisParameters body) {
+		String accept = request.getHeader("Accept");
+		return AnalyzeApiControllerImpl.getInstance().post();
+	}
 
 }
