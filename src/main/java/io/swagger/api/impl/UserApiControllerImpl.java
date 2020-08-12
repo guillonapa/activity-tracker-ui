@@ -36,7 +36,7 @@ public class UserApiControllerImpl implements IApiController<UserBaseReqBody, Vo
 		try {
 			return new ResponseEntity<UserBaseReqBody>(objectMapper.readValue(
 					"{\n  \"name\" : \"Foo Bar\",\n  \"id\" : \"id\",\n  \"email\" : \"foo@email.com\"\n}",
-					UserBaseReqBody.class), HttpStatus.NOT_IMPLEMENTED);
+					UserBaseReqBody.class), HttpStatus.OK);
 		} catch (IOException e) {
 			log.error("Couldn't serialize response for content type application/json", e);
 			return new ResponseEntity<UserBaseReqBody>(HttpStatus.INTERNAL_SERVER_ERROR);
