@@ -36,4 +36,6 @@ jobs:
     - name: Run maven script
       uses: guillonapa/action-maven-cli/jdk11@master
       with:
-        args: clean package test
+        lifecycle: 'clean package test'
+#       with:
+#         args: clean package test
