@@ -1,5 +1,6 @@
 # Activity Tracker UI
 
-![status badge](https://github.com/guillonapa/activity-tracker-ui/workflows/Gradle%20Build%20and%20Test/badge.svg)
+![build status badge](https://github.com/guillonapa/activity-tracker-ui/workflows/Build/badge.svg)
+![test status badge](https://github.com/guillonapa/activity-tracker-ui/workflows/Test/badge.svg)
 
 React front end for the Activity Tracker app.
